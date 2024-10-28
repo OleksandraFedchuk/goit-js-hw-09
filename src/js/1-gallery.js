@@ -83,8 +83,14 @@ const images = [
               </li>
         `)
         .join('');
-            }
+            };
 
+            import SimpleLightbox from "simplelightbox";
 
-
-
+            import "simplelightbox/dist/simple-lightbox.min.css";
+            
+            const lightBox = new SimpleLightbox('.gallery-item a', { 
+                captions: true,
+                captionsData: "alt",
+                captionsDelay: 250, 
+                });
