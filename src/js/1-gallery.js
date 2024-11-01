@@ -94,3 +94,7 @@ const images = [
                 captionsData: "alt",
                 captionsDelay: 250, 
                 });
+
+
+
+                
