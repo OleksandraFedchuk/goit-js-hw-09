@@ -12,6 +12,13 @@ const textArea = document.querySelector('.textarea-field');
 form.addEventListener("input" , handlerInput);
 form.addEventListener("submit", handlerSubmit);
 
+function handlerInput(event) {
+    formData[event.target.name] = event.target.value.trim();
+    const savedMessage = JSON.stringify(formData);
+    localStorage.setItem(STORAGE_KEY, savedMessage);
+}
+
+
 const savedData = localStorage.getItem(STORAGE_KEY);
 if (savedData) {
     const parsedData = JSON.parse(savedData);
@@ -22,11 +29,6 @@ if (savedData) {
     textArea.value = formData.message;
 }
 
-function handlerInput(event) {
-    formData[event.target.name] = event.target.value.trim();
-    const savedMessage = JSON.stringify(formData);
-    localStorage.setItem(STORAGE_KEY, savedMessage);
-}
 
 
 function handlerSubmit(event){
